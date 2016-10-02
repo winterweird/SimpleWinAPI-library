@@ -13,17 +13,12 @@ This is a work in progress. I intend to build upon it, extending it further as I
 #include "winapiutil.hpp"
 ...
 winapiutil::Console console = winapiutil::getConsole();
-// resize the console window to 80x30 characters:
-console.resize(80, 30);
-// make the console window 10 characters narrower and 15 characters taller:
-console.resize_relative(-10, 15);
-// move the topleft corner of the console window to pixel (200, 100) on your screen:
-console.reposition(200, 100);
-// move the console 50 pixels to the right and 20 pixels up on your screen:
-console.reposition_relative(50, -20);
+// Do stuff with console; See src/test.cpp and src/test2.cpp for sample usage
+// or check out Console.hpp and CursorPosition.hpp for an overview of the
+// possibilities
 ```
 
-(Currently this is everything my library supports.)
+(Currently, this library only supports operations on the console. These operations include: Cursor movement, console resizing/repositioning and clearing the screen buffer.)
 
 In order to use this library, you will have to link it with your executable, either by creating a library file which you specify to your linker, or by adding all the source files to the compile command when compiling your program.
 
@@ -33,6 +28,8 @@ As indicated in the makefile, you can compile each source file and archive them 
 
 * src/winapiutil.cpp
 * src/Console.cpp
+* src/Console_clear.cpp
 * src/Console_helper.cpp
+* src/CursorPosition.cpp
 
 I don't know how other compilers than the GNU compilers deal with stuff, so if there's anything which differs from your compiler, you'll have to figure that out on your own. Good luck!
